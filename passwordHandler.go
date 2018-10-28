@@ -13,7 +13,7 @@ func PasswordHandler(operation int) string {
 	fmt.Print("enter password:")
 	password, _ := terminal.ReadPassword(int(os.Stdin.Fd()))
 	if operation == 0 {
-		fmt.Print("enter password again:")
+		fmt.Print("\nenter password again:")
 		password2, _ := terminal.ReadPassword(int(os.Stdin.Fd()))
 		if string(password) != string(password2) {
 			fmt.Print("passwords are not match!")
