@@ -14,6 +14,8 @@ var TestDatas = []struct {
 	{"ABCDEFGHIJKLMNOPRJSTUVWXYZ", "world_hello"},
 	{"ığüşöç", "küçük_harf_türkçe_karakter_test"},
 	{"İĞÜŞÖÇ", "BÜYÜK_HARF_TÜRKÇE_KARAKTER_TEST"},
+	{"É!'^+%&/()=?_", "special_characters_shift"},
+	{"<>£#$½¾|", "special_characters_alt"},
 }
 
 func TestEncryptDecrypt(t *testing.T) {
