@@ -24,7 +24,10 @@ func TestEncryptDecrypt(t *testing.T) {
 		encrypted := string(Encrypt([]byte(data.OriginalData), []byte(data.Passphrase)))
 		decrypted := string(Decrypt([]byte(encrypted), []byte(data.Passphrase)))
 
-		if !reflect.DeepEqual(hasher.Sum([]byte(decrypted)), hasher.Sum([]byte(data.OriginalData))) {
+		md5Decrypted := hasher.Sum([]byte(decrypted))
+		md5Original := hasher.Sum([]byte(data.OriginalData))
+
+		if !reflect.DeepEqual(md5Decrypted, md5Original) {
 			t.Errorf("Encrypt: Expected: %s, Actual: %s", data.OriginalData, decrypted)
 		} else {
 			t.Logf("[PASSED]: Original: %s, Encrypted: %s, Decrypted: %s", data.OriginalData, encrypted, decrypted)
