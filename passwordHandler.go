@@ -17,7 +17,7 @@ func PasswordHandler(operation int) string {
 		fmt.Print("\nPlease enter password (again): ")
 		password2, _ := terminal.ReadPassword(int(os.Stdin.Fd()))
 		if strings.Compare(string(password), string(password2)) != 0 {
-			fmt.Println("\nPasswords do not match, please retype again!")
+			fmt.Println("\nPasswords do not match, please type again!")
 			return PasswordHandler(operation)
 		}
 	}
